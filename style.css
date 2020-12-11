@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Michroma&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Varela+Round&display=swap');
+
+:root {
+    --main-color-1: 
+    --main-color-2: 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-family: 'Varela Round', sans-serif;
+    
+}
+
+/*Styling for the nav bar*/
+nav {
+    height: 80px;
+    background: #000000;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    position: fixed;
+    width: 100%;
+}
+
+.kglogo {
+    width: 10%;
+    margin-top: .5rem;
+}
+
+.kglogoc {
+    width: 8%;
+    margin-top: .5rem;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    position: relative;
+    color: #d8d8d8;
+    font-size: 18px;
+    padding: 7px 0;
+    font-weight: 700;
+}
+
+
+nav ul li a:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: #000000;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+}
+
+nav ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+label #btn, label #cancel {
+    color: #d8d8d8;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+
+#check{
+    display: none;
+}
+
+/*styling for landing page*/
+.landingbackground {
+    display: flex;
+    background-image: url(images/DSC_0663.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*styling for titles*/
+.title {
+    font-size: 25pt;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+/*Header for photo page*/
+.mainphotography {
+    position: relative;
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*container for all images*/
+.image-txt-container {
+    text-align: center;
+
+}
+
+/*Styling for images*/
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 300px;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/*Modal styling*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/*Caption of modal image*/
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/*Animation for modal*/
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/*close buttom in photography page*/
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*video page format*/
+.mainvideo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+/*embeded video styling*/
+#videobox {
+    display: block;
+    text-align: center;
+
+}
+
+.embed {
+    width: 1080;
+    height: 660;
+}
+
+/*video text styling*/
+.videotext {
+    margin-left: 7rem;
+    margin-right: 5rem;
+    text-align: center;
+}
+
+.videodetail {
+    text-align: left;
+}
+/*web design page styling*/
+.webmain {
+    margin-top: 5rem;
+}
+
+/*website image/link and text styling*/
+.myweb {
+    margin-top: 1rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+    font-size: 20pt;
+    font-weight: 500;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.webimg {
+    display: flex;
+    flex-direction: row;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+
+}
+.webimgs {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    min-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.webtitle {
+    font-weight: 700;
+    font-size: 30pt;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    
+
+}
+
+.webdetail {
+    margin-top: 7rem;
+    margin-left: 7rem;
+    margin-right: 5rem;
+    font-size: 17pt;
+    line-height: 2rem;
+}
+
+/*about me main*/
+.memain{
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.mepic {
+    display: block;
+    height: auto;
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+}
+
+.aboutmearticle {
+    text-align: center;
+    font-size: 15pt;
+    line-height: 2rem;
+    margin-top: 3rem;
+    font-weight: 500;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    color: ;
+    background-color: transparent;
+}
+
+footer p {
+    padding-top: 30px;
+}
+
+/*Tablet and Mobile section*/
+@media (max-width: 1444px) {
+    nav ul li a {
+        font-size: 17px;
+    }
+
+    .kglogoc {
+        width: 23%;
+    }
+
+    .webmain {
+        margin-top: 5rem;
+    }
+    
+    /*website image/link and text styling*/
+    .myweb {
+        margin-top: 1rem;
+        margin-right: 5rem;
+        margin-left: 5rem;
+        margin-bottom: 3rem;
+        font-size: 20pt;
+        font-weight: 500;
+        text-align: center;
+        line-height: 2.5rem;
+    }
+    
+    .webimg {
+        display: flex;
+        flex-direction: row;
+        margin-left: 3rem;
+        margin-bottom: 3rem;
+    
+    }
+    .webimgs {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        min-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .webtitle {
+        font-weight: 700;
+        font-size: 30pt;
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        color: #000000;
+        
+    
+    }
+    
+    .webdetail {
+        margin-top: 7rem;
+        margin-left: 7rem;
+        margin-right: 5rem;
+        font-size: 13pt;
+        line-height: 2rem;
+    }
+
+@media (max-width: 1222) {
+    .kglogoc {
+        width: 23%;
+    }
+}
+
+label #btn{
+    display:block;
+}
+
+nav ul{
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   background: #000000;
+   top: 80px;
+   left: -100%;
+   text-align : center;
+   transition: all .5s;
+}
+
+nav ul li{
+   display: block;
+   margin: 50px 0;
+   line-height: 30px;
+}
+
+nav ul li a {
+   font-size: 20px;
+}
+#check:checked ~ ul {
+   left: 0;
+}
+
+#check:checked ~ label #btn {
+   display: none;
+}
+
+#check:checked ~ label #cancel {
+   display: block;
+}
+}
+
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 666px) {
+
+
+
+.kglogoc {
+    width: 40%;
+    margin-top: 1rem;
+}
+
+.videotext {
+    margin-left: 2rem;
+    text-align: center;
+}
+
+
+.mainvideo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.videotext {
+    margin-left: auto;
+}
+
+/*web design page styling*/
+.webmain {
+    margin-top: 5rem;
+}
+
+/*website image/link and text styling*/
+.myweb {
+    margin-top: 1rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+    font-size: 17pt;
+    font-weight: 500;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.webimg {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-bottom: 3rem;
+
+}
+.webimgs {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    min-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.webtitle {
+    font-weight: 700;
+    font-size: 30pt;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    
+
+}
+
+
+
+.webdetail {
+    margin-top: 7rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 17pt;
+    line-height: 2rem;
+}
+
+.embed {
+    width: 480;
+    height: 320;
+}
+
+.mepic {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
+
+.aboutmearticle {
+    text-align: center;
+    font-size: 15pt;
+    line-height: 2rem;
+    margin-top: 3rem;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+label #btn{
+     display:block;
+}
+
+nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    top: 80px;
+    left: -100%;
+    text-align : center;
+    transition: all .5s;
+}
+
+nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+}
+
+nav ul li a {
+    font-size: 20px;
+}
+#check:checked ~ ul {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    display: none;
+}
+
+#check:checked ~ label #cancel {
+    display: block;
+}
+}
